@@ -8,10 +8,10 @@ Wyróżniamy 4 typy.
 3 - format xml
 4 - format csv
 
-Przykładowe wywołanie: ..../nowy/1
+Przykładowe wywołanie: ..../args/1
 Odpowiedź API: upperLetters:2 lowerLetters:8 numbers:2 specialCharacters:2
 
-Przykładowe wywołanie: ..../nowy/2
+Przykładowe wywołanie: ..../args/2
 Odpowiedź API: {"upperLetters":"2",
 "lowerLetters":"8",
 "numbers":"2",

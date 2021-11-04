@@ -1,24 +1,28 @@
 package com.example.lab3;
 
 
+
+
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+
 @org.springframework.stereotype.Service
 public class Service {
 
-public String prnt(String type, String result){
-
-    if(type.equals("1")){
-        return"json";
+public String convertToJson(String args){
+    JSONParser parser = new JSONParser();
+    try {
+        JSONObject json = (JSONObject) parser.parse(args);
+        return json.toString();
+    } catch (ParseException e) {
+        e.printStackTrace();
     }
-    else if(type.equals("2")){
-        return "xml";
-    }
-    else if(type.equals("3")){
-        return "csv";
-    }
-    else{
-        return "bledny typ";
-    }
-
+    return "blad";
+}
+public String printText(String args){
+    return args;
 }
 
 
