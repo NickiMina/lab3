@@ -13,12 +13,12 @@ public class Controller {
     @GetMapping("/nowy/{type}")
     public String getString(@PathVariable String type)
     {
-        //final String uri = "http://localhost:8080/checkString/NazwaPliku12!(";
+        final String uri = "http://localhost:8080/checkString/NazwaPliku12!(";
 
-       // RestTemplate restTemplate = new RestTemplate();
-        //String result = restTemplate.getForObject(uri, String.class);
+      RestTemplate restTemplate = new RestTemplate();
+      String result = restTemplate.getForObject(uri, String.class);
 
-       return service.prnt(type);
+       return service.prnt(type,result);
     }
 
 }
