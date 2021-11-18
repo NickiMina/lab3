@@ -5,18 +5,13 @@ public class ParserFromString {
     public int lowerLetters;
     public int number;
     public int specialCharacters;
-    public String received;
-
-    public ParserFromString(String gotFromHost) {
-        this.received=gotFromHost;
-    }
 
    public void setAllVariables(String received){
-       String substring=received.substring(13,14);//28,29,30//38,39,40//58.59
+       String substring=received.substring(14,15);
        upperLetters=Integer.parseInt(substring);
-       lowerLetters=Integer.parseInt(received.substring(28,29));
-       number=Integer.parseInt(received.substring(38,39));
-       specialCharacters=Integer.parseInt(received.substring(58,59));
+       lowerLetters=Integer.parseInt(received.substring(31,32));
+       number=Integer.parseInt(received.substring(43,44));
+       specialCharacters=Integer.parseInt(received.substring(65,66));
    }
     public int getUpperLetters() {
         return upperLetters;
