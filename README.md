@@ -1,19 +1,9 @@
 Aplikacja, która korzysta z danych wysłanych przez drugą aplikacje.
-Aplikacja pobiera od użytkownika typ, a następnie odbiera dane z API innej aplikacji i wyświetla, w odpowiednim formacie, uzyskane dane.
+Aplikacja pobiera od użytkownika argumenty i typ, a następnie odbiera dane z API innej aplikacji i wyświetla, w odpowiednim formacie, uzyskane dane.
 
-Przekazanie argumentu, a dokładniej typu (inaczej formatu) wyświetlenia danych, odbywa się poprzez podanie: /argumenty/tutajtyp.
-Wyróżniamy 4 typy.
-1 - format tekstowy
-2 - format json
-3 - format xml
-4 - format csv
+Scieżka wywolania aplikacji ma wygladac nastepująco: /nowy/argumenty/typ, gdzie "argumenty" to wybrane slowo, ktore chcemy policzyć, a "typ" to rodzaj w jakim chcemy odczytac wynik.
+Przykładowe wywołanie: ..../nowy/Test123/json
+Odpowiedź API: { "upperLetters": 1, "lowerLetters": 3, "numbers": 3, "specialCharacters": 0 }
 
-Przykładowe wywołanie: ..../args/1
-Odpowiedź API: upperLetters:2 lowerLetters:8 numbers:2 specialCharacters:2
-
-Przykładowe wywołanie: ..../args/2
-Odpowiedź API: {"upperLetters":"2",
-"lowerLetters":"8",
-"numbers":"2",
-"specialCharacters":"2",
-}
+Przykładowe wywołanie: ..../nowy/Test123/xml
+Odpowiedź API: 1, 3, 3, 0,
