@@ -11,8 +11,17 @@ import org.json.simple.parser.ParseException;
 @org.springframework.stereotype.Service
 public class Service {
 
-public String convertToJson(String args){
-return null;
+public String convertToJson(ParserFromString parser){
+    String str = """ 
+        {
+        "upperLetters": %d,
+        "lowerLetters": %d,
+        "numbers": %d,
+        "specialCharacters": %d
+        }
+        """;
+    return String.format(str,parser.getUpperLetters(),parser.getLowerLetters(), parser.getNumber(), parser.getSpecialCharacters());
+
 }
 public String convertToTxt(ParserFromString parser){
     return "upperLetters: "+parser.getUpperLetters()+"\r\n"+"lowerLetters: "

@@ -22,7 +22,7 @@ public class Controller {
     @GetMapping("/nowy/{args}/json")//do poprawy
     public String getJson(@PathVariable String args){
         parserFromString=stringservice.getAnswer(args);
-        return service.convertToJson(args);
+        return service.convertToJson(parserFromString);
     }
     @GetMapping("/nowy/{args}/xml")
     public String getXml(@PathVariable String args){
