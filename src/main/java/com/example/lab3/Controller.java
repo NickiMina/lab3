@@ -19,7 +19,7 @@ public class Controller {
         parserFromString=stringservice.getAnswer(args);
         return service.convertToTxt(parserFromString);
     }
-    @GetMapping("/nowy/{args}/json")//do poprawy
+    @GetMapping("/nowy/{args}/json")
     public String getJson(@PathVariable String args){
         parserFromString=stringservice.getAnswer(args);
         return service.convertToJson(parserFromString);
