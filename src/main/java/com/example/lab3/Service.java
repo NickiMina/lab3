@@ -12,18 +12,14 @@ import org.json.simple.parser.ParseException;
 public class Service {
 
 public String convertToJson(String args){
-    JSONParser parser = new JSONParser();
-    try {
-        JSONObject json = (JSONObject) parser.parse(args);
-        return json.toString();
-    } catch (ParseException e) {
-        e.printStackTrace();
-    }
-    return "blad";
+return null;
 }
-public String printText(String args){
-    return args;
+public String printText(ParserFromString parser){
+    return "upperLetters: "+parser.getUpperLetters()+"\r\n"+"lowerLetters: "
+            +parser.getLowerLetters()+"\r\n"+ "numbers: "+parser.getNumber()+"\r\n"+"specialCharacters: "+parser.getSpecialCharacters();
 }
-
+public String printXml(ParserFromString parser){
+    return null;
+}
 
 }
