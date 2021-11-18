@@ -8,7 +8,7 @@ import org.springframework.web.client.RestTemplate;
 public class Controller {
     private Service service;
 
-    public StringService stringservice;
+    public StringService stringservice=new StringService();
     public ParserFromString parserFromString;
     public Controller(Service service) {
        this.service = service;
@@ -17,7 +17,7 @@ public class Controller {
     public String getString(@PathVariable String args)
     {
         parserFromString=stringservice.getAnswer(args);
-        return service.printText(parserFromString);
+        return service.convertToTxt(parserFromString);
     }
     @GetMapping("/nowy/{args}/json")//do poprawy
     public String getJson(@PathVariable String args){
@@ -27,7 +27,12 @@ public class Controller {
     @GetMapping("/nowy/{args}/xml")
     public String getXml(@PathVariable String args){
         parserFromString=stringservice.getAnswer(args);
-        return service.printXml(parserFromString);
+        return service.convertToXml(parserFromString);
+    }
+    @GetMapping("/nowy/{args}/csv")
+    public String getCsv(@PathVariable String args){
+        parserFromString=stringservice.getAnswer(args);
+        return service.convertToCsv(parserFromString);
     }
 
 }

@@ -10,7 +10,7 @@ public class StringService {
 
         RestTemplate restTemplate = new RestTemplate();
         String result = restTemplate.getForObject(uri, String.class);
-        parser = new ParserFromString(result);
+        parser = new ParserFromString();
         parser.setAllVariables(result);
         return parser;
     }
